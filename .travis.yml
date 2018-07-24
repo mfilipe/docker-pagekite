@@ -1,0 +1,11 @@
+sudo: required
+language: bash
+services:
+  - docker
+before_install:
+    - docker run --rm --privileged multiarch/qemu-user-static:register --reset
+    - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+script:
+    - docker build --build-arg ARCH=armhf --no-cache -t mfilipe/pagekite:armhf-latest .
+    - docker build --build-arg ARCH=amd64 --no-cache -t mfilipe/pagekite:amd64-latest .
+    - docker push mfilipe/pagekite
