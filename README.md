@@ -1,5 +1,5 @@
 # docker-pagekite
-Dockerized pagekit for armhf and amd64
+Dockerized pagekite for armhf and amd64
 
 # How to use
 1. Register [your kite](https://pagekite.net/).
