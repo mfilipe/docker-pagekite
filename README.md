@@ -1,5 +1,5 @@
 # docker-pagekite [![Build Status](https://travis-ci.org/mfilipe/docker-pagekite.svg?branch=master)](https://travis-ci.org/mfilipe/docker-pagekite)
-Dockerized pagekite for armhf and amd64
+Dockerized pagekite for armhf, arm64, i386 and amd64.
 
 # How to use
 1. Register [your kite](https://pagekite.net/).
