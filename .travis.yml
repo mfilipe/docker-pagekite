@@ -6,5 +6,6 @@ before_install:
   - docker run --rm --privileged multiarch/qemu-user-static:register --reset
   - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
 script:
-  - for arch in ( armhf arm64 amd64 i386 ); do docker build --build-arg ARCH=${arch} --no-cache -t mfilipe/pagekite:${arch} .; done
+  - archs=( armhf arm64 amd64 i386 )
+  - for arch in ${archs[@]}; do docker build --build-arg ARCH=${arch} --no-cache -t mfilipe/pagekite:${arch} .; done
   - docker push mfilipe/pagekite
